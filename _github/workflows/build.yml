@@ -1,0 +1,37 @@
+# https://laravel-news.com/laravel-github-actions
+name: Build
+on:
+  push:
+    branches-ignore:
+      - 'dependabot/npm_and_yarn/*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          tools: composer:v2
+          coverage: none
+
+      - name: Install composer dependencies
+        run: |
+          composer install --no-scripts
+
+      - name: Environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Compile Assets
+        run: |
+          yarn
+          yarn build
+
+      # - name: Run Tests
+      #   run: |
+      #     php artisan test
