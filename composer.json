@@ -14,6 +14,7 @@
   "require-dev": {
       "laravel/pint": "^1.4",
       "laravel/sail": "^1.18",
+      "laravel/octane": "^1.2",
       "nunomaduro/larastan": "^2.0",
       "phpunit/phpunit": "^9.3",
       "pestphp/pest": "^1.22"
@@ -28,6 +29,9 @@
           "Blazervel\\Dev\\Tests\\": "tests"
       }
   },
+  "bin": [
+    "bin/dev"
+  ],
   "config": {
       "sort-packages": true
   },
