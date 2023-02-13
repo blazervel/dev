@@ -1,6 +1,6 @@
-<?php
+<?php declare (strict_types=1);
 
-namespace Blazervel\Blazervel\Console\Commands;
+namespace Blazervel\Dev\Console\Commands;
 
 use Illuminate\Console\Command;
 
@@ -11,14 +11,14 @@ class DevCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'blazervel:dev';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Start Blazervel dev server';
 
     /**
      * Execute the console command.
@@ -27,6 +27,8 @@ class DevCommand extends Command
      */
     public function handle()
     {
+        // $this->call('sail up');
+
         return Command::SUCCESS;
     }
 }
