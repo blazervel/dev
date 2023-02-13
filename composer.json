@@ -30,7 +30,7 @@
       }
   },
   "bin": [
-    "bin/dev"
+    "bin/blazervel"
   ],
   "config": {
       "sort-packages": true
